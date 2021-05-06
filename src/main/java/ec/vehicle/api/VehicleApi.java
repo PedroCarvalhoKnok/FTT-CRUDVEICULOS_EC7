@@ -70,7 +70,7 @@ public class VehicleApi extends HttpServlet {
 	    	
 	    	VehicleDao vehicleDao = new VehicleDao();
 	    	
-	        Vehicle vehicle = vehicleDao.getUserById(id);
+	        Vehicle vehicle = vehicleDao.getVehicleById(id);
 	     	Gson gson = new Gson();
 	    	response.getWriter().append(gson.toJson(vehicle));
 	    	
@@ -78,7 +78,7 @@ public class VehicleApi extends HttpServlet {
 	    	
 	    	VehicleDao vehicleDao = new VehicleDao();
 	    	
-	    	List<Vehicle> vehicles = vehicleDao.getAllUser();
+	    	List<Vehicle> vehicles = vehicleDao.getAllVehicles();
 	        
 	    	Gson gson = new Gson();
 
@@ -99,7 +99,7 @@ public class VehicleApi extends HttpServlet {
 			
 			long idUser = Long.valueOf(id);
 			
-			vehicleDao.getUserById(idUser);
+			vehicleDao.getVehicleById(idUser);
 			
 			
 			
@@ -108,7 +108,7 @@ public class VehicleApi extends HttpServlet {
 			
 			VehicleDao vehicleDao = new VehicleDao();
 			
-			List<Vehicle> vehicles = vehicleDao.getAllUser();
+			List<Vehicle> vehicles = vehicleDao.getAllVehicles();
 			
 			Gson gson = new Gson();
 			
@@ -135,20 +135,20 @@ public class VehicleApi extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Vehicle u = new Vehicle(
-				request.getParameter("id"),
-				request.getParameter("marca"),
-				request.getParameter("modelo"),
-				request.getParameter("chassi"),
-				request.getParameter("placa"),
-				request.getParameter("cor"),
-				request.getParameter("condicao"),
-				request.getParameter("dataFabricacao"),				
-				request.getParameter("preco")				
+				request.getParameter("vehicle-id"),
+				request.getParameter("vehicle-marca"),
+				request.getParameter("vehicle-modelo"),
+				request.getParameter("vehicle-chassi"),
+				request.getParameter("vehicle-placa"),
+				request.getParameter("vehicle-cor"),
+				request.getParameter("vehicle-condicao"),
+				request.getParameter("vehicle-dataFabricacao"),				
+				request.getParameter("vehicle-preco")				
 				);
 		
 		VehicleDao vehicleDao = new VehicleDao();
 		
-		vehicleDao.addUser(u);
+		vehicleDao.addVehicle(u);
 		
 		System.out.println(u);
 		
@@ -165,20 +165,20 @@ public class VehicleApi extends HttpServlet {
 		response.setContentType("application/json"); //mimeType - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
 
 		Vehicle u = new Vehicle(
-				request.getParameter("id"),
-				request.getParameter("marca"),
-				request.getParameter("modelo"),
-				request.getParameter("chassi"),
-				request.getParameter("placa"),
-				request.getParameter("cor"),
-				request.getParameter("condicao"),
-				request.getParameter("dataFabricacao"),				
-				request.getParameter("preco")				
+				request.getParameter("vehicle-id"),
+				request.getParameter("vehicle-marca"),
+				request.getParameter("vehicle-modelo"),
+				request.getParameter("vehicle-chassi"),
+				request.getParameter("vehicle-placa"),
+				request.getParameter("vehicle-cor"),
+				request.getParameter("vehicle-condicao"),
+				request.getParameter("vehicle-dataFabricacao"),				
+				request.getParameter("vehicle-preco")				
 				);
 
 		VehicleDao vehicleDao = new VehicleDao();
 		
-		vehicleDao.updateUser(u);
+		vehicleDao.updateVehicle(u);
 		
 		System.out.println(u);
 		
@@ -205,7 +205,7 @@ public class VehicleApi extends HttpServlet {
 		
 		VehicleDao vd = new VehicleDao();
 		
-		vd.deleteUser(vehicleId);
+		vd.deleteVehicle(vehicleId);
 		
 		response.getWriter().append(request.getParameter("vehicle-id") + " Veiculo removido");
 		}

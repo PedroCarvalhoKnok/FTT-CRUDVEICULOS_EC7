@@ -137,8 +137,8 @@ public class MarcaApi extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Marca u = new Marca(
-				request.getParameter("id"),
-				request.getParameter("descricaoMarca")							
+				request.getParameter("marca-id"),
+				request.getParameter("marca-descricaoMarca")							
 				);
 		
 		MarcaDao marcaDao = new MarcaDao();
@@ -160,8 +160,8 @@ public class MarcaApi extends HttpServlet {
 		response.setContentType("application/json"); //mimeType - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
 
 		Marca u = new Marca(
-				request.getParameter("id"),
-				request.getParameter("descricaoMarca")							
+				request.getParameter("marca-id"),
+				request.getParameter("marca-descricaoMarca")							
 				);
 
 		MarcaDao marcaDao = new MarcaDao();
@@ -191,9 +191,9 @@ public class MarcaApi extends HttpServlet {
 		
 		
 		
-		VehicleDao ud = new VehicleDao();
+		MarcaDao ud = new MarcaDao();
 		
-		ud.deleteUser(marcaId);
+		ud.deleteMarca(marcaId);
 		
 		response.getWriter().append(request.getParameter("marca-id") + " User removido");
 		}

@@ -20,7 +20,7 @@ public class VehicleDao {
         connection = DBUtil.getConnection();
     } //UserDao
 
-    public void addUser(Vehicle vehicle) {
+    public void addVehicle(Vehicle vehicle) {
         
     	//https://www.devmedia.com.br/assertions-em-java/28781
     	
@@ -50,16 +50,16 @@ public class VehicleDao {
         }
     } //addUser
     
-    public void deleteUser(Long id) {
+    public void deleteVehicle(Long id) {
     	
     	Vehicle user = new Vehicle();
     	user.setId(id);
     	
-    	deleteUser(user);
+    	deleteVehicle(user);
     	
     } // deleteUser long
 
-    public void deleteUser(Vehicle vehicle) {
+    public void deleteVehicle(Vehicle vehicle) {
         try {
             
         	PreparedStatement preparedStatement = connection
@@ -81,7 +81,7 @@ public class VehicleDao {
         }
     } //deleteUser
 
-    public void updateUser(Vehicle vehicle) {
+    public void updateVehicle(Vehicle vehicle) {
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("UPDATE vehiclen1.Veiculo SET Marca=?, " 
@@ -131,7 +131,7 @@ public class VehicleDao {
         }
     } //updateUser
 
-    public List<Vehicle> getAllUser() {
+    public List<Vehicle> getAllVehicles() {
         
     	List<Vehicle> vehicleList = new ArrayList<Vehicle>();
         
@@ -161,18 +161,18 @@ public class VehicleDao {
         return vehicleList;
     } //getAllUser
 
-    public Vehicle getUserById(Long id) {
+    public Vehicle getVehicleById(Long id) {
     	
     	Vehicle vehicle = new Vehicle();
     	vehicle.setId(id);
     	
-    	return getUserById(vehicle);
+    	return getVehicleById(vehicle);
     	
     } // getUserById long
     
     
     	
-    public Vehicle getUserById(Vehicle vehicle) {
+    public Vehicle getVehicleById(Vehicle vehicle) {
 
     	Vehicle userOutput = new Vehicle();
         
