@@ -8,14 +8,43 @@
 </style>
 </head>
 <body>
+<div id="navLateral" class="lateralnav">
+  <a href="javascript:void(0)" class="btnfechar" onclick="closeNav()">&times;</a>
+  <a href="index.html">Cadastrar Veiculo</a>
+  <a href="marca.html">Cadastrar Marca</a>
+  <a href="veiculo.html">Listagem de Veiculos</a>
+  <a href="grafico.html">Estatistica</a>
+</div>
 <h1>User</h1>
 <!--  get, post ok -->
-<form method="post" action="/FTT-WEB-091/user">
-<p><label for="vehicle-id">ID: </label><input type="number" id="vehicle-id" name="vehicle-id" required></p>
-<p><label for="user-name">Name: </label><input type="text" id="user-name" name="user-name" required></p>
-<p><label for="user-email">E-Mail: </label><input type="email" id="user-email" name="user-email" required></p>
-<p><label for="user-color">Color: </label><input type="color" id="user-color" name="user-color" required></p>
+<form method="post" action="/CRUDVEICULOSN1/vehicle">
+<label for="vehicle-id">Id</label>
+<input type="number" class="form-control" id="vehicle-id" placeholder="Id" value=" " required>
+<label for="vehicle-marca">Marca</label>
+ <select class="form-control" id="vehicle-marca" placeholder="marca">
+</select>
+<label for="vehicle-modelo">Modelo</label>
+<input type="text" class="form-control" id="vehicle-modelo" placeholder="modelo" value=" " required>
+<label for="vehicle-chassi">Chassi</label>
+<input type="text" class="form-control" id="vehicle-chassi" placeholder="chassi" value=" " required>
+<label for="vehicle-placa">Placa</label>
+<input type="text" class="form-control" id="vehicle-placa" placeholder="placa" value=" " required>
+<label for="vehicle-dataFabricacao">Data de Fabricação</label>
+<input type="date" class="form-control" id="vehicle-dataFabricacao" placeholder="data" value=" " required>
+<label for="vehicle-preco">Preço</label>
+<input type="number" class="form-control" id="vehicle-preco" placeholder="preco" value=" " required>
+<label for="vehicle-cor">Cor</label>
+<input type="text" class="form-control" id="vehicle-placa" placeholder="placa" value=" " required>
+<label for="vehicle-condicao">Condição</label>
+<input type="text" class="form-control" id="vehicle-condicao" placeholder="condição" value=" " required>
 <input type="submit">
 </form>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="sweetalert2.all.min.js"></script>
+        <script src="carregaMarca.js"></script>
 </body>
 </html>

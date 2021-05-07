@@ -2,9 +2,40 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="menu.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <title>Insert title here</title>
 </head>
 <body>
+
+<div id="navLateral" class="lateralnav">
+  <a href="javascript:void(0)" class="btnfechar" onclick="closeNav()">&times;</a>
+  <a href="index.html">Cadastrar Veiculo</a>
+  <a href="marca.html">Cadastrar Marca</a>
+  <a href="veiculo.html">Listagem de Veiculos</a>
+  <a href="grafico.html">Estatistica</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+<h1>Marcas</h1>
+
+<form method="post" action="/CRUDVEICULOSN1/marca">
+<label for="marca-id">Id</label>
+<input type="number" class="form-control" id="marca-id" placeholder="Id" value=" " required>
+<label for="marca-descricaoMarca">Marca</label>
+<input type="text" class="form-control" id="marca-descricaoMarca" placeholder="marca" value=" " required>
+<input type="submit">
+</form>
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="sweetalert2.all.min.js"></script>
+        <script src="listaVeiculo.js"></script>
+
 
 </body>
 </html>
