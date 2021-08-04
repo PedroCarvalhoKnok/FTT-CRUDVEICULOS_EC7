@@ -20,7 +20,7 @@ $(function() {
     .then(function(data) {
       
 
-        for(var i = 0; i < data.length ; i++){
+        for(let i = 0; i < data.length ; i++){
           html += '<ul class="list-group list-group-flush">';
           html += `<li class="list-group-item"><p id="modelo_veiculo" class="card-title">${data[i].modelo}</p></li>`;
           html += `<li class="list-group-item"><p id="marca_veiculo" class="card-title">${data[i].marca}</p></li>`;

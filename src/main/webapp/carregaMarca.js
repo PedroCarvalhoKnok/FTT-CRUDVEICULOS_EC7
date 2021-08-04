@@ -21,7 +21,7 @@ $(function() {
       
 
        html = '<option value="">Selecionar a marca do Veiculo</option>';
-     for(var i = 0; i < data.length; i++){
+     for(let i = 0; i < data.length; i++){
         html += '<option value='+ data[i].id +'>'+ data[i].descricaoMarca + '</option>';
      }
 

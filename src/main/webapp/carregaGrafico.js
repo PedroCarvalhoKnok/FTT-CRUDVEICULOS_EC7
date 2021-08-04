@@ -19,12 +19,12 @@ $(function() {
     })
     .then(function(data) {
 	
-	var data = [];
+	let data = [];
 			
-	var label;
-	var price;
+	let label;
+	let price;
 	
-	for(var i = 0; i < data.length ; i++){
+	for(let i = 0; i < data.length ; i++){
                    
          label = data[i].modelo;
          price = data[i].preco;
@@ -33,7 +33,7 @@ $(function() {
         }
       
 
-        var chart = new CanvasJS.Chart("graficoContainer", {
+        let chart = new CanvasJS.Chart("graficoContainer", {
 		title:{
 			text: "Valor dos veículos por modelo"              
 		},
